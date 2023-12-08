@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query Examples</title>
+</head>
+<body>
+    <h1>Exercício</h1>
+
+    <h2>
+        A - Filtrar Livros por Autor: Escreva uma query para encontrar todos os livros escritos por
+        um autor específico, usando o nome do autor como filtro.
+    </h2>
+    {% for livros in livros_por_autor %}
+        <p>{{livros.author}}: {{ livros.title }}</p>
+    {% endfor %}
+
+    <h2>
+        B - Buscar Livros com Tags Especificas: Como você pode filtrar livros que possuem uma
+        determinada tag? Por exemplo, encontrar todos os livros que tẽm a tag ”Ficção”.
+    </h2>
+    {% for livros in livros_por_tag %}
+        <p>{{ livros.title }}</p>
+    {% endfor %}
+
+    <h2>
+        C - Listar Autores com Biografias Especificas: Crie uma query para encontrar autores cujas
+        biografias contêm uma palavra ou frase especifica dentro do texto.
+    </h2>
+    {% for autores in autores_com_biografia %}
+        <p>{{ autores.name }}</p>
+    {% endfor %}
+
+    <h2>
+        D - Encontrar Livros com Avaliações Altas: Como você pode filtrar livros que têm pelo
+        menos uma avalia ̧c ̃ao com uma classificação (rating) igual ou superior a 4?
+    </h2>
+    {% for reveiw in avaliacao_alta %}
+        <p>{{ reveiw.book }}</p>
+    {% endfor %}
+
+    <h2>
+        E - Perfil de Usu ́arios com Websites Especificos: Escreva uma query para encontrar perfis
+        de usuarios que têm um website especifico em seu campo website.
+    </h2>
+    {% for usuario in usuario_website%}
+        <p>{{ usuario.user }}</p>
+    {% endfor %}
+
+    <h2>F - Listar Livros sem Avaliacoes: Como você filtraria para encontrar livros que ainda nao
+        receberam nenhuma avaliacao?</h2>
+    {% for livros in website_especifico %}
+        <p>{{ livros.title }} </p>
+    {% endfor %}
+
+    <h2>
+        G - Autores com Maior Número de Livros: Crie uma query para listar os autores com base no número de livros que eles escreveram, ordenando do maior para o menor.
+    </h2>
+    {% for author in autores_mais_livros %}
+        <p>Author: {{ author.name }}, Number of Books: {{ author.num_books }}</p>
+    {% endfor %}
+    
+    <h2>
+        H - Livros com Resumos Longos: Como você pode filtrar livros cujos resumos têm mais de
+        150 palavras?
+    </h2>
+    {% for livros in livros_resumos_longos %}
+        <p>{{ livros.title }} </p>
+    {% endfor %}
+
+    <h2>
+        I - Avaliacoes de Livros de um Autor Específico: Escreva uma query para encontrar todas
+        as avaliaçoes dos livros de um determinado autor.
+    </h2>
+    {% for livro in avaliacoes_do_autor %}
+        <p>{{ livro.book.title }}</p>
+    {% endfor %}
+
+    <h2>
+        J - Livros com Múltiplas Tags: Como você pode listar livros que estao associados a mais
+        de uma tag específica, por exemplo, ”Poesia”e ”Ciência”?
+    </h2>
+    {% for livro in livros_tags_especificas %}
+        <p>{{ livro.title }}</p>
+    {% endfor %}
+
+</body>
+</html>
